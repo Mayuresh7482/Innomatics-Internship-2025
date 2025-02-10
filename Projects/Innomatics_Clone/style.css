@@ -141,8 +141,8 @@ main {
 /* Banner */
 .banner-img {
   width: 100%;
-  max-width: 1000px; /* Optional: limits the maximum width */
-  height: 400px; /* Set a fixed height for the slider */
+  max-width: 1000px; 
+  height: 400px; 
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -151,7 +151,7 @@ main {
 .banner-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures images fill the container without distortion */
+  object-fit: cover; 
   position: absolute;
   top: 0;
   left: 0;
@@ -364,18 +364,18 @@ main {
 .Advantages ul {
   list-style-type: none;
   padding: 0;
-  border: 2px solid #ddd; /* Border around the entire list */
-  border-radius: 8px; /* Optional: Rounds the corners of the border */
+  border: 2px solid #ddd; 
+  border-radius: 8px; 
 }
 
 .Advantages ul li {
   padding: 10px 15px;
   font-size: 0.95rem;
-  border-bottom: 1px solid #ddd; /* Divider line between items */
+  border-bottom: 1px solid #ddd; 
 }
 
 .Advantages ul li:last-child {
-  border-bottom: none; /* Remove divider for the last item */
+  border-bottom: none; 
 }
 
 iframe {
@@ -784,10 +784,10 @@ iframe {
   justify-content: center;
   align-items: center;
   margin-bottom: 15px;
-  background-color: #555; /* Set background color */
-  color: white; /* Set text color */
-  padding: 10px; /* Optional: Add padding for spacing */
-  border-radius: 7px; /* Optional: Add border-radius for rounded corners */
+  background-color: #555; 
+  color: white; 
+  padding: 10px; 
+  border-radius: 7px; 
 }
 
 .contact-item i {
@@ -799,7 +799,7 @@ iframe {
 .contact-item h4,
 .contact-item p {
   margin: 0;
-  color: white; /* Ensure text color is white */
+  color: white; 
 }
 
 @media (min-width: 480px) {
