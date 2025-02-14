@@ -1,47 +1,56 @@
-let membership = "Regular"; // Default membership
+let membershipType = "Regular";
 
 function setMembership(type) {
-    membership = type;
-    alert(`Membership set to ${type}`);
+    membershipType = type;
+    alert(`Membership Set: ${type}`);
 }
 
 function calculateTotal() {
-    const coffeePrices = { latte: 3, cappuccino: 3.5, espresso: 2.5 };
-    const coffeeType = document.getElementById("coffeeType").value;
-    const basePrice = coffeePrices[coffeeType];
+    let coffeeType = document.getElementById("coffeeType").value;
+    let coffeeSize = document.getElementById("coffeeSize").value;
+    let quantity = parseInt(document.getElementById("quantity").value);
 
-    const size = document.getElementById("coffeeSize").value;
-    let sizeCost = 0;
-    if (size === "medium") sizeCost = 1;
-    if (size === "large") sizeCost = 2;
+    let basePrices = { 
+        latte: 3, 
+        cappuccino: 3.5, 
+        espresso: 2.5, 
+        mocha: 4, 
+        americano: 2.75, 
+        macchiato: 3.25, 
+        flatWhite: 3.75 
+    };
+    let sizePrices = { small: 0, medium: 1, large: 2 };
 
-    const quantity = parseInt(document.getElementById("quantity").value);
-    let addOnsCost = 0;
+    let basePrice = basePrices[coffeeType] + sizePrices[coffeeSize];
+    let addOnCost = 0;
 
-    document.querySelectorAll(".addons input:checked").forEach(item => {
-        addOnsCost += parseFloat(item.value);
-    });
+    if (document.getElementById("whippedCream").checked) addOnCost += 0.5;
+    if (document.getElementById("extraShot").checked) addOnCost += 1;
+    if (document.getElementById("syrup").checked) addOnCost += 0.75;
 
-    let subtotal = (basePrice + sizeCost + addOnsCost) * quantity;
-
+    let subtotal = (basePrice + addOnCost) * quantity;
     let discount = 0;
-    if (membership === "Gold") discount = subtotal * 0.15;
-    else if (membership === "Silver") discount = subtotal * 0.10;
 
-    const promoCode = document.getElementById("promoCode").value;
-    if (promoCode === "COFFEE10") discount += subtotal * 0.10;
+    // Membership Discount
+    if (membershipType === "Gold") discount = subtotal * 0.15;
+    if (membershipType === "Silver") discount = subtotal * 0.10;
 
-    const tax = (subtotal - discount) * 0.08;
-    const total = (subtotal - discount + tax).toFixed(2);
+    // Promo Code Discount
+    if (document.getElementById("promoCode").value === "BREWHUB10") {
+        discount += subtotal * 0.10;
+    }
+
+    let tax = (subtotal - discount) * 0.08;
+    let total = (subtotal - discount + tax).toFixed(2);
 
     document.getElementById("summaryDetails").innerHTML = `
-        Coffee: ${coffeeType} (${size}) <br>
-        Quantity: ${quantity} <br>
-        Add-ons: $${addOnsCost.toFixed(2)} <br>
-        Subtotal: $${subtotal.toFixed(2)} <br>
-        Discount: $${discount.toFixed(2)} <br>
-        Tax: $${tax.toFixed(2)} <br>
-        <b>Total: $${total}</b>
+        Coffee: ${coffeeType.toUpperCase()} (${coffeeSize})<br>
+        Quantity: ${quantity}<br>
+        Add-ons: $${addOnCost.toFixed(2)}<br>
+        Subtotal: $${subtotal.toFixed(2)}<br>
+        Discount: $${discount.toFixed(2)}<br>
+        Tax: $${tax.toFixed(2)}<br>
+        <strong>Total: $${total}</strong>
     `;
 
     document.getElementById("orderSummary").classList.remove("hidden");
