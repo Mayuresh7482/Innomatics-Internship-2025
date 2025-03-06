@@ -1,0 +1,49 @@
+/* Global CSS Variables */
+:root {
+   /* Primary Colors */
+   --primary-color: #4a63e7;
+   --primary-light: #738eff;
+   --primary-dark: #2a41c5;
+   
+   /* Secondary Colors */
+   --secondary-color: #ff6b6b;
+   --secondary-light: #ff9e9e;
+   --secondary-dark: #e63e3e;
+   
+   /* Neutral Colors */
+   --bg-light: #f9f9f9;
+   --bg-white: #ffffff;
+   --text-dark: #333333;
+   --text-gray: #666666;
+   --text-light: #999999;
+   --border-color: #e0e0e0;
+   
+   /* Dark Mode Colors */
+   --bg-dark: #121212;
+   --bg-dark-light: #1e1e1e;
+   --text-dark-mode: #e0e0e0;
+   --text-dark-gray: #b0b0b0;
+   --border-dark: #2a2a2a;
+   
+   /* Font Sizes */
+   --fs-xs: 0.75rem;    /* 12px */
+   --fs-sm: 0.875rem;   /* 14px */
+   --fs-base: 1rem;     /* 16px */
+   --fs-md: 1.125rem;   /* 18px */
+   --fs-lg: 1.25rem;    /* 20px */
+   --fs-xl: 1.5rem;     /* 24px */
+   --fs-2xl: 1.875rem;  /* 30px */
+   --fs-3xl: 2.25rem;   /* 36px */
+   --fs-4xl: 3rem;      /* 48px */
+   
+   /* Spacing */
+   --space-xs: 0.25rem;  /* 4px */
+   --space-sm: 0.5rem;   /* 8px */
+   --space-md: 1rem;     /* 16px */
+   --space-lg: 1.5rem;   /* 24px */
+   --space-xl: 2rem;     /* 32px */
+   --space-2xl: 3rem;    /* 48px */
+   
+   /* Other */
+   --border-radius-sm: 4px;
+   --border-radius
